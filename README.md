@@ -29,3 +29,28 @@ python3-pip install discordslashcommands
 python-pip3 install discordslashcommands
 python3-pip3 install discordslashcommands
 ```
+
+## Documentation
+
+The main class of this libary is the Manager class
+you have to call it at the bot's start
+You can call it again after if you need it
+
+The minimal code is like that
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client) # this is the code of discordslashcommands libary
+
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
+
+
