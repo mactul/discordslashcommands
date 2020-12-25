@@ -11,21 +11,21 @@ you can install it via pip
 
 In a command prompt, run this command:
 ```
-pip3 install eagleapi
+pip3 install discordslashcommands
 ```
 If it doesn't work, try all this commands, maybe one can work
 ```
-pip install eagleapi
-py -m pip install eagleapi
-python3 -m pip install eagleapi
-py -m pip3 install eagleapi
-python3 -m install eagleapi
-py3 -m pip install eagleapi
-py3 -m pip3 install eagleapi
-python -m pip install eagleapi
-python3 -m pip install eagleapi
-python-pip install eagleapi
-python3-pip install eagleapi
-python-pip3 install eagleapi
-python3-pip3 install eagleapi
+pip install discordslashcommands
+py -m pip install discordslashcommands
+python3 -m pip install discordslashcommands
+py -m pip3 install discordslashcommands
+python3 -m install discordslashcommands
+py3 -m pip install discordslashcommands
+py3 -m pip3 install discordslashcommands
+python -m pip install discordslashcommands
+python3 -m pip install discordslashcommands
+python-pip install discordslashcommands
+python3-pip install discordslashcommands
+python-pip3 install discordslashcommands
+python3-pip3 install discordslashcommands
 ```
