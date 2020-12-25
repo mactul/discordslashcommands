@@ -68,6 +68,19 @@ command = dsc.Command(name="help", description="display help")
 manager.add_global_command(command)
 ```
 
+Here is the full code
+```py
+import discord
+import discordslashcommands as dsc
 
+client = discord.Client()
 
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client) # create the manager
+    command = dsc.Command(name="help", description="display help") # create the command
+    manager.add_global_command(command) # put it on discord
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
 
