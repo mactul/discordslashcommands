@@ -84,3 +84,7 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
+
+### Create a guild slash command
+
+it's 
