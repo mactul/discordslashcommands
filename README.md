@@ -87,4 +87,4 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Create a guild slash command
 
-it's 
+documentation is coming
