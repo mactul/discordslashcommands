@@ -142,4 +142,7 @@ command.add_option(option) # add the new option created in the command
 ```
 
 
-documentation is coming
+documentation is coming...
+Refer to the test.py file for examples of the undocumented part
+
+
