@@ -113,4 +113,31 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
+
+### Command object
+
+For all next steps, we need to know better the Command class.
+We have seen a simple command like that:
+```py
+command = dsc.Command(name="help", description="display help")
+```
+But we can imagine that the help command can takes arguments, to print parts of help for example.
+We will add an argument, name category, it represents the part of the help that we want print.
+This argument has several predefined values.
+3 for example, an help for premium, for moderation and for music
+
+We need to add an argument (an option), with a name, a description and predefined values
+
+To do that, we need a new object, call Option
+```py
+command = dsc.Command(name="help", description="display help") # create the main object
+
+option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+
+option.add_choice(name="premium part", value="premium")
+option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
+option.add_choice(name="music part", value="music")
+
+
+
 documentation is coming
