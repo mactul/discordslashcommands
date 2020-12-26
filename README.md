@@ -141,6 +141,29 @@ option.add_choice(name="music part", value="music")
 command.add_option(option) # add the new option created in the command
 ```
 
+To use this version of the help command, this is the full code
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client) # create the manager
+    
+    command = dsc.Command(name="help", description="display help") # create the commandcommand = dsc.Command(name="help", description="display help") # create the main object
+    option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+    option.add_choice(name="premium part", value="premium")
+    option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
+    option.add_choice(name="music part", value="music")
+    command.add_option(option) # add the new option created in the command
+    
+    manager.add_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, command) # put it on discord
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
 
 documentation is coming...
 Refer to the test.py file for examples of the undocumented part
