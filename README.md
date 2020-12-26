@@ -6,14 +6,14 @@ You can create commands that will follow a particular patern and that will be ea
 
 ## installation
 
-This package is on pypi
-you can install it via pip
+This package is on pypi.
+You can install it via pip
 
 In a command prompt, run this command:
 ```
 pip3 install discordslashcommands
 ```
-If it doesn't work, try all this commands, maybe one can work
+If it doesn't work, try all this commands, maybe one can work.
 ```
 pip install discordslashcommands
 py -m pip install discordslashcommands
@@ -32,9 +32,9 @@ python3-pip3 install discordslashcommands
 
 ## Documentation
 
-The main class of this libary is the Manager class
-you have to call it at the bot's start
-You can call it again after if you need it
+The main class of this libary is the Manager class,
+you have to call it at the bot's start.
+You can call it again after if you need it.
 
 The minimal code is like that
 ```py
