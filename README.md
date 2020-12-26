@@ -87,4 +87,14 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Create a guild slash command
 
+To create the command localy, it's the same way that for global commands.
+The change is only with the manager.
+The name of the put function is different and it takes one more argument, the id of the guild.
+
+```py
+manager = dsc.Manager(client)
+command = dsc.Command(name="help", description="display help")
+manager.add_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, command)
+```
+
 documentation is coming
