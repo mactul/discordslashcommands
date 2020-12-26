@@ -54,7 +54,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Create a global slash command
 
-To create a slash command, we need to create this command in a local object and put it on discord
+To create a slash command, we need to create this command in a local object and put it on discord.
 The local object is call Command()
 
 a simple command without arguments looks like this
