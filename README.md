@@ -137,6 +137,8 @@ option = Option(name="category", description="the part of the help you want to d
 option.add_choice(name="premium part", value="premium")
 option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
 option.add_choice(name="music part", value="music")
+
+command.add_option(option) # add the new option created in the command
 ```
 
 
