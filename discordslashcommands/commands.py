@@ -22,7 +22,7 @@ class Command:
         extend the command with a new option
         """
         self.options += [option]
-    
+
 
     def to_dict(self):
         """
@@ -42,23 +42,23 @@ class Command:
                 "choices": option.choices
             }
             dico["options"] += [optn]
-        
+
         return dico
-    
-    
+
+
     def delete(self):
         """
         remove the command from discord
         do nothing if the command has no id
         """
-        if self.id != None:
+        if self.id is not None:
             manager = root.Manager(self._client)
-            if self.guild_id == None:
+            if self.guild_id is None:
                 manager.delete_global_command(self.id)
             else:
                 manager.delete_guild_command(self.guild_id, self.id)
-                
-    
+
+
     def __str__(self):
         option_str = ""
         for option in self.options:
@@ -79,8 +79,8 @@ class ReturnedCommand:
 
     def add_option(self, option):
         self.options += [option]
-    
-    
+
+
     def __str__(self):
         str_optn = ""
         for optn in self.options:
@@ -92,7 +92,7 @@ def _load_command(dico, client, guild_id=None):
     command = Command(name=dico["name"], description=dico["description"], client=client, id=int(dico["id"]), guild_id=guild_id)
     if "options" in dico:
         for optn in dico["options"]:
-            if not "required" in optn:
+            if "required" not in optn:
                 optn["required"] = False
             option = Option(name=optn["name"], description=optn["description"], type=optn["type"], required=optn["required"])
             if "choices" in optn:
@@ -100,4 +100,3 @@ def _load_command(dico, client, guild_id=None):
                     option.add_choice(name=choice["name"], value=choice["value"])
             command.add_option(option)
     return command
-    
