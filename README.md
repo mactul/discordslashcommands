@@ -274,6 +274,35 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Get a specific global slash commands
+
+If you know the id of your command, you can get it directly with the `get_global_command(id)` function.\
+You can also get all global commands and use `discord.utils.get` function to get a specific command by name, id or other.
+
+```py
+commands = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+```
+
+The Command objects returned are the same as in list of commands in `get_all_global_commands()` function
+
+A complete example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    commands = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+    print(command.name) # print the name of the command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
 
 
 documentation is coming...\
