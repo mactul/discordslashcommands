@@ -23,8 +23,8 @@ class Manager:
 
         self.url = "https://discord.com/api/v8/applications/"+self.client_id+"/commands"
         
-        client._connection.parsers["INTERACTION_CREATE"] = self._function_runner #on crée un nouvel event
-    
+        client._connection.parsers["INTERACTION_CREATE"] = self._function_runner  # create a new event
+
     def get_all_global_commands(self):
         """
         return all global slash commands of your application
@@ -35,25 +35,24 @@ class Manager:
         for dico in cmd_list:
             output += [_load_command(dico, self._client)]
         return output
-    
-    
+
+
     def get_global_command(self, id: int):
         """
         return a specific global slash command of your application, identified by id
         you can also use discord.utils.get to idenfiate by name
         """
         return discord.utils.get(self.get_all_global_commands(), id=id)
-    
-    
-    
+
+
     def delete_global_command(self, id):
         """
         id: int or str
         delete a specific global slash command of your application, identified by id
         """
         requests.delete(self.url+"/"+str(id), headers=self.headers)
-        
-    
+
+
     def add_global_command(self, cmd):
         """
         cmd: Command object
@@ -62,8 +61,8 @@ class Manager:
         """
         dico = cmd.to_dict()
         requests.post(self.url, headers=self.headers, json=dico)
-        
-    
+
+
     def get_all_guild_commands(self, guild_id):
         """
         guild_id: int or string
@@ -77,17 +76,17 @@ class Manager:
         for dico in cmd_list:
             output += [_load_command(dico, self._client, guild_id)]
         return output
-    
-    
+
+
     def get_guild_command(self, guild_id, id: int):
         """
         guild_id: int or string
         return a specific slash command of a specific guild
         """
         return discord.utils.get(self.get_guild_commands(guild_id), id=id)
+
     
-    
-    
+
     def delete_guild_command(self, guild_id, id):
         """
         guild_id: int or string
@@ -97,9 +96,8 @@ class Manager:
         url = "https://discord.com/api/v8/applications/"+self.client_id+"/guilds/"+str(guild_id)+"/commands"
 
         requests.delete(url+"/"+str(id), headers=self.headers)
-        
-    
-    
+
+
     def add_guild_command(self, guild_id, cmd):
         """
         guild_id: int or string
@@ -111,7 +109,7 @@ class Manager:
         dico = cmd.to_dict()
         requests.post(url, headers=self.headers, json=dico)
 
-    
+
     def _function_runner(self, data):
         guild = self._client.get_guild(int(data["guild_id"]))
         member = discord.Member(guild=guild, data=data["member"], state=guild._state)
