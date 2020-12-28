@@ -1,12 +1,12 @@
 # discord_slash_command
 
-Discordslashcommand is an extension library to discord.py
-It allows you to easily manipulate discord slash (/) commands.
+Discordslashcommand is an extension library to discord.py\
+It allows you to easily manipulate discord slash (/) commands.\
 You can create commands that will follow a particular patern and that will be easy to use on the discord application.
 
 ## installation
 
-This package is on pypi.
+This package is on pypi.\
 You can install it via pip
 
 In a command prompt, run this command:
@@ -32,9 +32,9 @@ python3-pip3 install discordslashcommands
 
 ## Documentation
 
-The main class of this libary is the Manager class,
-you have to call it at the bot's start.
-You can call it again after if you need it.
+The main class of this libary is the Manager class,\
+you have to call it at the bot's start.\
+You can call it again after if you need it.\
 
 The minimal code is like that
 ```py
@@ -54,7 +54,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Create a global slash command
 
-To create a slash command, we need to create this command in a local object and put it on discord.
+To create a slash command, we need to create this command in a local object and put it on discord.\
 The local object is call Command()
 
 a simple command without arguments looks like this
@@ -87,9 +87,9 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Create a guild slash command
 
-To create the command localy, it's the same way that for global commands.
-The change is only with the manager.
-The name of the put function is different and it takes one more argument, the id of the guild.
+To create the command localy, it's the same way that for global commands.\
+The change is only with the manager.\
+The name of the put function is different and it takes one more argument, the id of the guild.\
 
 ```py
 manager = dsc.Manager(client)
@@ -116,14 +116,14 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Command object
 
-For all next steps, we need to know better the Command class.
+For all next steps, we need to know better the Command class.\
 We have seen a simple command like that:
 ```py
 command = dsc.Command(name="help", description="display help")
 ```
-But we can imagine that the help command can takes arguments, to print parts of help for example.
-We will add an argument, name category, it represents the part of the help that we want print.
-This argument has several predefined values.
+But we can imagine that the help command can takes arguments, to print parts of help for example.\
+We will add an argument, name category, it represents the part of the help that we want print.\
+This argument has several predefined values.\
 3 for example, an help for premium, for moderation and for music
 
 We need to add an argument (an option), with a name, a description and predefined values
@@ -167,8 +167,8 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Get all global slash commands
 
-Maybe, you need to have a full list of the commands of your application.
-To get it, you can use the manager with the `get_all_global_commands()` function
+Maybe, you need to have a full list of the commands of your application.\
+To get it, you can use the manager with the `get_all_global_commands()` function.\
 This function takes no arguments and return a list of Command objects.
 
 ```py
@@ -221,7 +221,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 
 
-documentation is coming...
+documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
 
 
