@@ -53,6 +53,17 @@ class Manager:
         requests.delete(self.url+"/"+str(id), headers=self.headers)
 
 
+    def edit_global_command(self, id, cmd):
+        """
+        id: int or string
+        cmd: Command object
+        put a new global command on your application
+        need 1h to be efficient
+        """
+        dico = cmd.to_dict()
+        requests.patch(self.url+"/"+str(id), headers=self.headers, json=dico)
+
+
     def add_global_command(self, cmd):
         """
         cmd: Command object
@@ -95,6 +106,19 @@ class Manager:
         url = "https://discord.com/api/v8/applications/"+self.client_id+"/guilds/"+str(guild_id)+"/commands"
 
         requests.delete(url+"/"+str(id), headers=self.headers)
+
+
+    def edit_guild_command(self, guild_id, id, cmd):
+        """
+        guild_id: int or string
+        id: int or string
+        cmd: Command object
+        put a new command on guild
+        """
+        url = "https://discord.com/api/v8/applications/"+self.client_id+"/guilds/"+str(guild_id)+"/commands/"+str(id)
+
+        dico = cmd.to_dict()
+        requests.patch(url, headers=self.headers, json=dico)
 
 
     def add_guild_command(self, guild_id, cmd):
