@@ -219,6 +219,61 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Get all guild slash commands
+
+Maybe, you need to have a full list of the commands of your application in a sepcific guild.\
+To get it, you can use the manager with the `get_all_guild_commands(guild_id)` function.\
+This function takes the guild id in arguments and return a list of Command objects.
+
+```py
+commands = manager.get_all_guild_commands(REPLACE_WITH_THE_ID_OF_YOUR_GUILD)
+```
+
+They Command objects returned are like this:
+```
+Command
+    .name: name of the command
+    .description: description of the command
+    .id: id of the command, to make actions on it
+    .guild_id: id of the guild requested
+    .options: a list of Option objects
+        list
+            .name: name of the option
+            .description: description of the option
+            .type: type of the option (dsc.STRING, dsc.INTEGER, etc...)
+            .required: boolean represent if the option is required
+            .choices: a list of choices
+                list
+                    dictionnary
+                        key "name": name of the choice
+                        key "value": value of the choice
+
+    .add_option(Option): function detailed above
+
+    .delete(): delete the Command directly from discord, without manager object
+
+```
+
+A complete example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    commands = manager.get_all_guild_commands(REPLACE_WITH_THE_ID_OF_YOUR_GUILD)
+
+    for command in commands: # loop on all commands
+        print(command.name) # print the name of the current command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
 
 
 documentation is coming...\
