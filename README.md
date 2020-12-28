@@ -165,6 +165,40 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Get all global slash commands
+
+Maybe, you need to have a full list of the commands of your application.
+To get it, you can use the manager with the `get_all_global_commands()` function
+This function takes no arguments and return a list of Command objects.
+
+```py
+commands = manager.get_all_global_commands()
+```
+
+They Command objects returned are like this:
+```
+Command
+    .name: name of the command
+    .description: description of the command
+    .id: id of the command, to make actions on it
+    .options: a list of Option objects
+        list
+            .name: name of the option
+            .description: description of the option
+            .type: type of the option (dsc.STRING, dsc.INTEGER, etc...)
+            .required: boolean represent if the option is required
+            .choices: a list of choices
+                list
+                    dictionnary
+                        key "name": name of the choice
+                        key "value": value of the choice
+
+    .add_option(Option): function detailed above
+
+    .delete(): delete the Command directly from discord, without manager object
+    
+```
+
 documentation is coming...
 Refer to the test.py file for examples of the undocumented part
 
