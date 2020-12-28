@@ -36,7 +36,7 @@ The main class of this libary is the Manager class,
 you have to call it at the bot's start.
 You can call it again after if you need it.
 
-The minimal code is like that
+The minimal code is like this :
 ```py
 import discord
 import discordslashcommands as dsc
