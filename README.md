@@ -124,7 +124,7 @@ command = dsc.Command(name="help", description="display help")
 But we can imagine that the help command can takes arguments, to print parts of help for example.\
 We will add an argument, name category, it represents the part of the help that we want print.\
 This argument has several predefined values.\
-3 for example, an help for premium, for moderation and for music
+3 for example, an help for premium, moderation and music
 
 We need to add an argument (an option), with a name, a description and predefined values
 
@@ -167,9 +167,9 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Get all global slash commands
 
-Maybe, you need to have a full list of the commands of your application.\
+Maybe, you need having a full list of the commands of your application.\
 To get it, you can use the manager with the `get_all_global_commands()` function.\
-This function takes no arguments and return a list of Command objects.
+This function takes no arguments and returns a list of Command objects.
 
 ```py
 commands = manager.get_all_global_commands()
@@ -186,7 +186,7 @@ Command
             .name: name of the option
             .description: description of the option
             .type: type of the option (dsc.STRING, dsc.INTEGER, etc...)
-            .required: boolean represent if the option is required
+            .required: boolean represents if the option is required
             .choices: a list of choices
                 list
                     dictionnary
@@ -221,9 +221,9 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 ### Get all guild slash commands
 
-Maybe, you need to have a full list of the commands of your application in a sepcific guild.\
+Maybe, you need having a full list of the commands of your application in a sepcific guild.\
 To get it, you can use the manager with the `get_all_guild_commands(guild_id)` function.\
-This function takes the guild id in arguments and return a list of Command objects.
+This function takes the guild id in arguments and returns a list of Command objects.
 
 ```py
 commands = manager.get_all_guild_commands(REPLACE_WITH_THE_ID_OF_YOUR_GUILD)
@@ -241,7 +241,7 @@ Command
             .name: name of the option
             .description: description of the option
             .type: type of the option (dsc.STRING, dsc.INTEGER, etc...)
-            .required: boolean represent if the option is required
+            .required: boolean represents if the option is required
             .choices: a list of choices
                 list
                     dictionnary
@@ -297,6 +297,36 @@ async def on_ready():
     manager = dsc.Manager(client)
 
     commands = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+    print(command.name) # print the name of the command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
+### Get a specific guild slash commands
+
+If you know the id of your command, you can get it directly with the `get_guild_command(guild_id, id)` function.\
+You can also get all guild commands and use `discord.utils.get` function to get a specific command by name, id or other.
+
+```py
+commands = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+```
+
+The Command objects returned are the same as in list of commands in `get_all_guild_commands(guild_id)` function
+
+A complete example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    commands = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 
     print(command.name) # print the name of the command
 
