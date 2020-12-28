@@ -196,8 +196,30 @@ Command
     .add_option(Option): function detailed above
 
     .delete(): delete the Command directly from discord, without manager object
-    
+
 ```
+
+A complete example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    commands = manager.get_all_global_commands()
+
+    for command in commands: # loop on all commands
+        print(command.name) # print the name of the current command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
+
 
 documentation is coming...
 Refer to the test.py file for examples of the undocumented part
