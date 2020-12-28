@@ -10,7 +10,7 @@ from .commands import _load_command
 class Manager:
     """
     This class need a discord.Client object to work
-    
+
     It starts the interaction listener
     It allows creation, edition, deletion and fetching of slash commands
     """
@@ -18,11 +18,11 @@ class Manager:
         self._client = client
         self.token = client.http.token
         self.client_id = str(client.user.id)
-        
+
         self.headers = {"Authorization": "Bot "+self.token}
 
         self.url = "https://discord.com/api/v8/applications/"+self.client_id+"/commands"
-        
+
         client._connection.parsers["INTERACTION_CREATE"] = self._function_runner  # create a new event
 
     def get_all_global_commands(self):
@@ -85,7 +85,6 @@ class Manager:
         """
         return discord.utils.get(self.get_guild_commands(guild_id), id=id)
 
-    
 
     def delete_guild_command(self, guild_id, id):
         """
