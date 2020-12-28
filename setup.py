@@ -12,6 +12,10 @@ setup(
     url = 'https://github.com/',
     download_url = 'https://github.com/mactul/discord_slash_command.git',
     keywords = ['discord', 'slash', 'custom', 'command', 'commands'],
+    install_requires=[
+        'discord',
+        'requests',
+    ],
     classifiers=[
         'Development Status :: 3 - Alpha', # Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable"
         'Intended Audience :: Developers',
