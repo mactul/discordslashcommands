@@ -535,7 +535,86 @@ Interaction
                   .name: the name of the option
                   .value: the value of the option
 
+    .call_on_message(prefix): a function detailed after
 ```
+
+
+### Transform an interaction to a message and call on_message function
+
+If you have an old bot discord that works with on_message function, you can adapt it easly to slash commands.\
+You have to use the `Interaction.call_on_message(prefix)` function.\
+This function will generate a fake discord.Message object, with a fake id, a fake content, etc...
+
+The function takes the name of the command, values of options, and create a string prefixed by the prefix string argument.
+
+for example, if I have created this command (the same as my second creation command example)
+```py
+command = dsc.Command(name="help", description="display help") # create the main object
+
+option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+
+option.add_choice(name="premium part", value="premium")
+option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
+option.add_choice(name="music part", value="music")
+
+command.add_option(option) # add the new option created in the command
+```
+
+if an user click on this command and choose "premium part" option, if I have this code
+```py
+@client.event
+async def on_interaction(member, interaction):
+    interaction.call_on_message("+")
+```
+
+The string generated looks like
+```
++help premium
+```
+
+
+A full example, with this help command
+(I don't put here the creation of the command, because it only has to be done once.)
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+
+@client.event
+async def on_interaction(member, interaction):
+    interaction.call_on_message("+")  # we do anything here, but we translate to a classic message
+
+
+@client.event
+async def on_message(message):  # this is the classic discord.py function
+    msg_content = message.content.lower()
+
+    if msg_content == "+help premium":
+        await message.channel.send(message.author.mention+" here is the premium help.......")
+
+    elif msg_content == "+help moderation":
+        await message.channel.send(message.author.mention+" here is the moderation help.......")
+
+    elif msg_content == "+help music":
+        await message.channel.send(message.author.mention+" here is the music help.......")
+
+    elif msg_content == "+help":
+        await message.channel.send(message.author.mention+" here is the full help.......")
+
+
+
+
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)  # DON'T FORGET THAT
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
 
 documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
