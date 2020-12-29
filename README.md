@@ -296,7 +296,7 @@ client = discord.Client()
 async def on_ready():
     manager = dsc.Manager(client)
 
-    commands = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+    command = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 
     print(command.name) # print the name of the command
 
@@ -326,13 +326,38 @@ client = discord.Client()
 async def on_ready():
     manager = dsc.Manager(client)
 
-    commands = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+    command = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 
     print(command.name) # print the name of the command
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
+
+### Delete a global slash command
+
+If you have get your command from the manager, you can delete your command easly like this:
+```py
+command.delete()
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    command = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+    command.delete()
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
 
 
 documentation is coming...\
