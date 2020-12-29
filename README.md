@@ -52,7 +52,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Create a global slash command
+#### Create a global slash command
 
 To create a slash command, we need to create this command in a local object and put it on discord.\
 The local object is call Command()
@@ -85,7 +85,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Create a guild slash command
+#### Create a guild slash command
 
 To create the command localy, it's the same way that for global commands.\
 The change is only with the manager.\
@@ -114,7 +114,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Command object
+#### Command object
 
 For all next steps, we need to know better the Command class.\
 We have seen a simple command like that:
@@ -165,7 +165,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Get all global slash commands
+#### Get all global slash commands
 
 Maybe, you need having a full list of the commands of your application.\
 To get it, you can use the manager with the `get_all_global_commands()` function.\
@@ -219,7 +219,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Get all guild slash commands
+#### Get all guild slash commands
 
 Maybe, you need having a full list of the commands of your application in a sepcific guild.\
 To get it, you can use the manager with the `get_all_guild_commands(guild_id)` function.\
@@ -274,7 +274,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Get a specific global slash commands
+#### Get a specific global slash commands
 
 If you know the id of your command, you can get it directly with the `get_global_command(id)` function.\
 You can also get all global commands and use `discord.utils.get` function to get a specific command by name, id or other.
@@ -304,7 +304,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Get a specific guild slash commands
+#### Get a specific guild slash commands
 
 If you know the id of your command, you can get it directly with the `get_guild_command(guild_id, id)` function.\
 You can also get all guild commands and use `discord.utils.get` function to get a specific command by name, id or other.
@@ -334,7 +334,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Delete a global slash command
+#### Delete a global slash command
 
 If you have get your command from the manager, you can delete your command easly like this:
 ```py
@@ -382,7 +382,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Delete a guild slash command
+#### Delete a guild slash command
 
 If you have get your command from the manager, you can delete your command easly like this:
 ```py
