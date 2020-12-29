@@ -32,6 +32,9 @@ python3-pip3 install discordslashcommands
 
 ## Documentation
 
+
+### Manager
+
 The main class of this libary is the Manager class,\
 you have to call it at the bot's start.\
 You can call it again after if you need it.
@@ -430,6 +433,53 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Edit a global slash command
+
+To edit a command, you need is id and a command object, exactly the same as for adding a command.\
+This is the edit function:
+```py
+manager.edit_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+    command = dsc.Command(name="help", description="display help") # create the command
+    manager.edit_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command) # replace existent command by new command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+### Edit a guild slash command
+
+To edit a command, you need is id and a command object, exactly the same as for adding a command.\
+This is the edit function:
+```py
+manager.edit_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+    command = dsc.Command(name="help", description="display help") # create the command
+    manager.edit_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command) # replace existent command by new command
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
 
 
 
