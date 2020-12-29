@@ -359,6 +359,28 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
+if you have just the id of your command, it is not necessary to get the whole command.\
+You can delete a global command by id, like this:
+```py
+manager.delete_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    manager.delete_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
 
 documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
