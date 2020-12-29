@@ -4,16 +4,16 @@ from distutils.core import setup
 setup(
     name = 'discordslashcommands',
     packages = ['discordslashcommands'],
-    version = '1.0.2',
+    version = '1.0.3',
     license='MIT',
-    long_description = 'A simple libary to configurate slash commands on discord\n\nSee documentation at https://github.com/mactul/discord_slash_command',
+    long_description = 'A simple libary to configurate slash commands on discord\n\nSee documentation at https://github.com/mactul/discordslashcommands',
     author = 'Macéo Tuloup',
     author_email = 'mactulgames@gmail.com',
-    url = 'https://github.com/mactul/discord_slash_command',
-    download_url = 'https://github.com/mactul/discord_slash_command.git',
+    url = 'https://github.com/mactul/discordslashcommands',
+    download_url = 'https://github.com/mactul/discordslashcommands.git',
     keywords = ['discord', 'slash', 'custom', 'command', 'commands'],
     install_requires=[
-        'discord',
+        'discord.py',
         'requests',
     ],
     classifiers=[
