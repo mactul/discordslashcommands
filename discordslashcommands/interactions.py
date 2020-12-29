@@ -1,4 +1,4 @@
-from .commands import ReturnedCommand
+from .commands import Command
 from .options import ReturnedOption
 import __main__
 import discord
@@ -30,7 +30,7 @@ class Interaction:
         self.id = int(id)
         self.guild = guild
         self.channel = client.get_channel(int(channel_id))
-        self.command = ReturnedCommand(name=data["name"], id=int(data["id"]))
+        self.command = Command(name=data["name"], description=None, client=client, id=int(data["id"], guild_id=guild.id))
         if "options" in data:
             for option in data["options"]:
                 self.command.add_option(ReturnedOption(name=option["name"], value=option["value"]))

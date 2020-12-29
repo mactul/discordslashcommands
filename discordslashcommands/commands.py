@@ -34,13 +34,21 @@ class Command:
             "options": []
         }
         for option in self.options:
-            optn = {
-                "name": option.name,
-                "description": option.description,
-                "type": option.type,
-                "required": option.required,
-                "choices": option.choices
-            }
+            if option._returned:
+                optn = {
+                    "name": option.name,
+                    "description": None,
+                    "type": 3,
+                    "required": False
+                }
+            else:
+                optn = {
+                    "name": option.name,
+                    "description": option.description,
+                    "type": option.type,
+                    "required": option.required,
+                    "choices": option.choices
+                }
             dico["options"] += [optn]
 
         return dico

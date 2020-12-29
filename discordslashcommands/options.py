@@ -8,6 +8,7 @@ class Option:
         self.type = type
         self.required = required
         self.choices = []
+        self._returned = False
 
 
     def add_choice(self, name, value):
@@ -28,6 +29,7 @@ class ReturnedOption:
     def __init__(self, name, value):
         self.name = name
         self.value = value
+        self._returned = True
 
 
     def __str__(self):
