@@ -382,6 +382,57 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Delete a guild slash command
+
+If you have get your command from the manager, you can delete your command easly like this:
+```py
+command.delete()
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    command = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+    command.delete()
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+if you have just the id of your command, it is not necessary to get the whole command.\
+You can delete a guild command by id, like this:
+```py
+manager.delete_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+```
+
+A complet example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)
+
+    manager.delete_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
+
+
+
+
 documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
 
