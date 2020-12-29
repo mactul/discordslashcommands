@@ -433,7 +433,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-### Edit a global slash command
+#### Edit a global slash command
 
 To edit a command, you need is id and a command object, exactly the same as for adding a command.\
 This is the edit function:
@@ -457,7 +457,7 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
-### Edit a guild slash command
+#### Edit a guild slash command
 
 To edit a command, you need is id and a command object, exactly the same as for adding a command.\
 This is the edit function:
@@ -510,6 +510,32 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
+member is a classic discord.Member object.\
+Refer to the discord.py documentation https://discordpy.readthedocs.io/en/latest/api.html#member
+
+interaction is a new object
+
+#### Interaction object
+
+Interaction object is a powerfull object who contain many informations about the interaction between the user and the command.
+
+It's looks like:
+```
+Interaction
+    .version: always 1, this is for the future of slash commands
+    .type: type of the interaction, can be 1 or 2, 1 is a ping/pong command and 2 is a normal command
+    .token: to reply to interaction with webhooks (not implemented in discordslashcommands library)
+    .id: the id of the command
+    .guild: the guild where the command comes from
+    .channel: the channel where the command comes from
+    .command: a Command object like Command object can be get
+              /!\ warning /!\ this Command object as many property to None, like description
+              /!\ warning /!\ options list is not a list of Option objects but a list of ReturnedOption objects
+              ReturnedOption
+                  .name: the name of the option
+                  .value: the value of the option
+
+```
 
 documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
