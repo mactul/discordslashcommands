@@ -482,6 +482,34 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
+### Interactions
+
+Interactions are a very important part of discordslashcommands.\
+this is what makes it possible to know when someone is using a command.
+
+When an user click on a command and if you have create a Manager class at the start of the bot, a new event is call.\
+This event is the event `on_interaction(member, interaction)`.
+
+this is an example:
+```py
+import discord
+import discordslashcommands as dsc
+
+client = discord.Client()
+
+
+@client.event
+async def on_interaction(member, interaction):  # this event is not in discord.py, it is add by discordslashcommands library
+    await interaction.channel.send("an user just click on a command")  # reply just in the same channel as where the command was launched.  
+
+
+@client.event
+async def on_ready():
+    manager = dsc.Manager(client)  # just to set up the library with the client
+
+client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+```
+
 
 documentation is coming...\
 Refer to the test.py file for examples of the undocumented part
