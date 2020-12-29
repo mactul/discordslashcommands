@@ -1,4 +1,4 @@
-# discord_slash_command
+# discordslashcommands
 
 Discordslashcommand is an extension library to discord.py\
 It allows you to easily manipulate discord slash (/) commands.\
