@@ -33,6 +33,31 @@ python3-pip3 install discordslashcommands
 ## Documentation
 
 
+
+### Informations about slash commands
+
+slash commands are restricted by discord.\
+There are many things you need to know to be able to use them.
+
+You must have access to your developer portal.\
+(here: https://discord.com/developers/applications/)
+
+When prompted on a server, your bot must have permission to use slash commands.\
+When you create the invitation link in the Oauth2 tab, you must check the "applications.commands" box and the "applications.commands.update" box in addition to the "bot" box.
+
+#### Limitations
+
+Copy and past of the full documentation of discord api.
+
+An app can have up to 50 top-level global commands (50 commands with unique names)
+An app can have up to an additional 50 guild commands per guild
+An app can have up to 10 subcommand groups on a top-level command
+An app can have up to 10 subcommands within a subcommand group
+choices can have up to 10 values per option
+commands can have up to 10 options per command
+
+
+
 ### Manager
 
 The main class of this libary is the Manager class,\
@@ -131,7 +156,17 @@ This argument has several predefined values.\
 
 We need to add an argument (an option), with a name, a description and predefined values
 
-To do that, we need a new object, call Option
+To do that, we need a new object, call Option.
+
+The type, which is an integer, can take several values between 1 and 8.\
+To help you, discordslashcommands has listed these types in constants:
+```py
+dsc.SUB_COMMAND
+dsc.SUB_COMMAND_GROUP
+dsc.STRING
+dsc.INTEGER
+ds
+```
 ```py
 command = dsc.Command(name="help", description="display help") # create the main object
 
@@ -615,8 +650,5 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-
-documentation is coming...\
-Refer to the test.py file for examples of the undocumented part
 
 
