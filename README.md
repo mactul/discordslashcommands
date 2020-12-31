@@ -60,7 +60,7 @@ commands can have up to 10 options per command
 
 ### Manager
 
-The main class of this libary is the Manager class,\
+The main class of this library is the Manager class,\
 you have to call it at the bot's start.\
 You can call it again after if you need it.
 
@@ -73,7 +73,7 @@ client = discord.Client()
 
 @client.event
 async def on_ready():
-    manager = dsc.Manager(client) # this is the code of discordslashcommands libary
+    manager = dsc.Manager(client) # this is the code of discordslashcommands library
 
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
