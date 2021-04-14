@@ -49,12 +49,12 @@ When you create the invitation link in the Oauth2 tab, you must check the "appli
 
 Copy and past of the full documentation of discord api.
 
-An app can have up to 50 top-level global commands (50 commands with unique names)
-An app can have up to an additional 50 guild commands per guild
-An app can have up to 10 subcommand groups on a top-level command
-An app can have up to 10 subcommands within a subcommand group
-choices can have up to 10 values per option
-commands can have up to 10 options per command
+An app can have up to 50 top-level global commands (50 commands with unique names)\
+An app can have up to an additional 50 guild commands per guild\
+An app can have up to 10 subcommand groups on a top-level command\
+An app can have up to 10 subcommands within a subcommand group\
+choices can have up to 10 values per option\
+commands can have up to 10 options per command\
 
 
 
