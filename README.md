@@ -54,8 +54,7 @@ An app can have up to an additional 50 guild commands per guild\
 An app can have up to 10 subcommand groups on a top-level command\
 An app can have up to 10 subcommands within a subcommand group\
 choices can have up to 10 values per option\
-commands can have up to 10 options per command\
-
+commands can have up to 10 options per command
 
 
 ### Manager
@@ -115,9 +114,9 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Create a guild slash command
 
-To create the command localy, it's the same way that for global commands.\
+To create the command locally, it's the same way that for global commands.\
 The change is only with the manager.\
-The name of the put function is different and it takes one more argument, the id of the guild.\
+The name of the put function is different and it takes one more argument, the id of the guild.
 
 ```py
 manager = dsc.Manager(client)
