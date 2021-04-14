@@ -64,7 +64,7 @@ The main class of this library is the Manager class,\
 you have to call it at the bot's start.\
 You can call it again after if you need it.
 
-The minimal code is like that
+The minimal code is like that:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -85,7 +85,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 To create a slash command, we need to create this command in a local object and put it on discord.\
 The local object is call Command()
 
-a simple command without arguments looks like this
+a simple command without arguments looks like this:
 ```py
 command = dsc.Command(name="help", description="display help")
 ```
@@ -96,7 +96,7 @@ command = dsc.Command(name="help", description="display help")
 manager.add_global_command(command)
 ```
 
-Here is the full code
+Here is the full code:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -179,7 +179,7 @@ option.add_choice(name="music part", value="music")
 command.add_option(option) # add the new option created in the command
 ```
 
-To use this version of the help command, this is the full code
+To use this version of the help command, this is the full code:
 ```py
 import discord
 import discordslashcommands as dsc
