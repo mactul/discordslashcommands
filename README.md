@@ -521,7 +521,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 Interactions are a very important part of discordslashcommands.\
 this is what makes it possible to know when someone is using a command.
 
-When an user click on a command and if you have create a Manager class at the start of the bot, a new event is call.\
+When an user clicks on a command and if you have created a Manager class at the start of the bot, a new event is called.\
 This event is the event `on_interaction(member, interaction)`.
 
 this is an example:
@@ -551,9 +551,9 @@ interaction is a new object
 
 #### Interaction object
 
-Interaction object is a powerfull object who contain many informations about the interaction between the user and the command.
+Interaction object is a powerful object who contains many informations about the interaction between the user and the command.
 
-It's looks like:
+It looks like:
 ```
 Interaction
     .version: always 1, this is for the future of slash commands
@@ -575,11 +575,11 @@ Interaction
 
 ### Transform an interaction to a message and call on_message function
 
-If you have an old bot discord that works with on_message function, you can adapt it easly to slash commands.\
+If you have an old discord bot that works with on_message function, you can adapt it easily to slash commands.\
 You have to use the `Interaction.call_on_message(prefix)` function.\
 This function will generate a fake discord.Message object, with a fake id, a fake content, etc...
 
-The function takes the name of the command, values of options, and create a string prefixed by the prefix string argument.
+The function takes the name of the command, values of options, and creates a string prefixed by the prefix string argument.
 
 for example, if I have created this command (the same as my second creation command example)
 ```py
@@ -594,7 +594,7 @@ option.add_choice(name="music part", value="music")
 command.add_option(option) # add the new option created in the command
 ```
 
-if an user click on this command and choose "premium part" option, if I have this code
+if an user clicks on this command and chooses "premium part" option, if I have this code
 ```py
 @client.event
 async def on_interaction(member, interaction):
@@ -608,7 +608,7 @@ The string generated looks like
 
 
 A full example, with this help command
-(I don't put here the creation of the command, because it only has to be done once.)
+(I didn't put the creation of the command here because it only has to be done once.)
 ```py
 import discord
 import discordslashcommands as dsc
