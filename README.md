@@ -204,7 +204,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Get all global slash commands
 
-Maybe, you need having a full list of the commands of your application.\
+You may need to know the full list of your application's commands.\
 To get it, you can use the manager with the `get_all_global_commands()` function.\
 This function takes no arguments and returns a list of Command objects.
 
@@ -212,7 +212,7 @@ This function takes no arguments and returns a list of Command objects.
 commands = manager.get_all_global_commands()
 ```
 
-They Command objects returned are like this:
+The Command objects returned are like this:
 ```
 Command
     .name: name of the command
@@ -256,17 +256,17 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
 
-#### Get all guild slash commands
+#### Get all guild slash command
 
-Maybe, you need having a full list of the commands of your application in a sepcific guild.\
+You may need to know the full list of your application's commands in a specific guild.\
 To get it, you can use the manager with the `get_all_guild_commands(guild_id)` function.\
-This function takes the guild id in arguments and returns a list of Command objects.
+This function takes the guild's id in arguments and returns a list of Command objects.
 
 ```py
 commands = manager.get_all_guild_commands(REPLACE_WITH_THE_ID_OF_YOUR_GUILD)
 ```
 
-They Command objects returned are like this:
+The Command objects returned are like this:
 ```
 Command
     .name: name of the command
@@ -314,13 +314,13 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 #### Get a specific global slash commands
 
 If you know the id of your command, you can get it directly with the `get_global_command(id)` function.\
-You can also get all global commands and use `discord.utils.get` function to get a specific command by name, id or other.
+You can also get all global commands and use the `discord.utils.get` function to get a specific command by name, id or other.
 
 ```py
 commands = manager.get_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 ```
 
-The Command objects returned are the same as in list of commands in `get_all_global_commands()` function
+The Command objects returned are the same as in the list of commands in `get_all_global_commands()` function
 
 A complete example:
 ```py
@@ -344,13 +344,13 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 #### Get a specific guild slash commands
 
 If you know the id of your command, you can get it directly with the `get_guild_command(guild_id, id)` function.\
-You can also get all guild commands and use `discord.utils.get` function to get a specific command by name, id or other.
+You can also get all guild commands and use the `discord.utils.get` function to get a specific command by name, id or other.
 
 ```py
 commands = manager.get_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 ```
 
-The Command objects returned are the same as in list of commands in `get_all_guild_commands(guild_id)` function
+The Command objects returned are the same as in the list of commands in `get_all_guild_commands(guild_id)` function
 
 A complete example:
 ```py
@@ -647,6 +647,5 @@ async def on_ready():
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
-
 
 
