@@ -47,7 +47,7 @@ When you create the invitation link in the Oauth2 tab, you must check the "appli
 
 #### Limitations
 
-Copy and past of the full documentation of discord api.
+Copy and paste of the full documentation of discord api.
 
 An app can have up to 50 top-level global commands (50 commands with unique names)\
 An app can have up to an additional 50 guild commands per guild\
@@ -143,7 +143,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Command object
 
-For the next steps, we need to know more the Command class.\
+For the next steps, we need to know more about the Command class.\
 We have seen so far a simple command like that:
 ```py
 command = dsc.Command(name="help", description="display help")
