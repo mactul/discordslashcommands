@@ -36,7 +36,7 @@ python3-pip3 install discordslashcommands
 
 ### Informations about slash commands
 
-slash commands are restricted by discord.\
+Slash commands are restricted by discord.\
 There are many things you need to know to be able to use them.
 
 You must have access to your developer portal.\
@@ -82,9 +82,9 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 #### Create a global slash command
 
 To create a slash command, we need to create this command in a local object and put it on discord.\
-The local object is call Command()
+The local object is call Command().
 
-a simple command without arguments looks like this:
+A simple command without arguments looks like this:
 ```py
 command = dsc.Command(name="help", description="display help")
 ```
@@ -169,7 +169,7 @@ ds
 ```py
 command = dsc.Command(name="help", description="display help") # create the main object
 
-option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+option = dsc.Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
 
 option.add_choice(name="premium part", value="premium")
 option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
@@ -190,7 +190,7 @@ async def on_ready():
     manager = dsc.Manager(client) # create the manager
     
     command = dsc.Command(name="help", description="display help") # create the commandcommand = dsc.Command(name="help", description="display help") # create the main object
-    option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+    option = dsc.Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
     option.add_choice(name="premium part", value="premium")
     option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
     option.add_choice(name="music part", value="music")
@@ -585,7 +585,7 @@ for example, if I have created this command (the same as my second creation comm
 ```py
 command = dsc.Command(name="help", description="display help") # create the main object
 
-option = Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
+option = dsc.Option(name="category", description="the part of the help you want to display", type=dsc.STRING, required=False)
 
 option.add_choice(name="premium part", value="premium")
 option.add_choice(name="moderation part", value="moderation") # if you don't understand the difference between name and value, put the same string into
