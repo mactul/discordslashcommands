@@ -469,7 +469,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Edit a global slash command
 
-To edit a command, you need its id and a command object. it's exactly the same as for adding a command.\
+To edit a command, you need its id and a command object. It's exactly the same as for adding a command.\
 This is the edit function:
 ```py
 manager.edit_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
@@ -519,12 +519,12 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ### Interactions
 
 Interactions are a very important part of discordslashcommands.\
-this is what makes it possible to know when someone is using a command.
+This is what makes it possible to know when someone is using a command.
 
 When an user clicks on a command and if you have created a Manager class at the start of the bot, a new event is called.\
 This event is the event `on_interaction(member, interaction)`.
 
-this is an example:
+This is an example:
 ```py
 import discord
 import discordslashcommands as dsc
