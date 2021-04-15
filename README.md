@@ -143,19 +143,19 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Command object
 
-For all next steps, we need to know better the Command class.\
-We have seen a simple command like that:
+For the next steps, we need to know more the Command class.\
+We have seen so far a simple command like that:
 ```py
 command = dsc.Command(name="help", description="display help")
 ```
-But we can imagine that the help command can takes arguments, to print parts of help for example.\
-We will add an argument, name category, it represents the part of the help that we want print.\
+But we can imagine that the help command can take arguments, to print parts of help for example.\
+We will add an argument, name category, it represents the part of the help that we want to print.\
 This argument has several predefined values.\
 3 for example, an help for premium, moderation and music
 
 We need to add an argument (an option), with a name, a description and predefined values
 
-To do that, we need a new object, call Option.
+To do that, we need a new object, called Option.
 
 The type, which is an integer, can take several values between 1 and 8.\
 To help you, discordslashcommands has listed these types in constants:
@@ -178,7 +178,7 @@ option.add_choice(name="music part", value="music")
 command.add_option(option) # add the new option created in the command
 ```
 
-To use this version of the help command, this is the full code:
+Here is the full code to use this version of the help command:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -647,7 +647,6 @@ async def on_ready():
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
-
 
 
 
