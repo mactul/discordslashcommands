@@ -493,7 +493,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Edit a guild slash command
 
-To edit a command, you need is id and a command object, exactly the same as for adding a command.\
+To edit a command, you need its id and a command object. it's exactly the same as for adding a command.\
 This is the edit function:
 ```py
 manager.edit_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
