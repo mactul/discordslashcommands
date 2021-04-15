@@ -373,7 +373,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Delete a global slash command
 
-If you've got your command from the manager, you can delete it easly like this:
+If you've got your command from the manager, you can delete it easily like this:
 ```py
 command.delete()
 ```
@@ -421,7 +421,7 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Delete a guild slash command
 
-If you've got your command from the manager, you can delete it easly like this:
+If you've got your command from the manager, you can delete it easily like this:
 ```py
 command.delete()
 ```
