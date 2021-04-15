@@ -373,12 +373,12 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Delete a global slash command
 
-If you have get your command from the manager, you can delete your command easly like this:
+If you've got your command from the manager, you can delete it easly like this:
 ```py
 command.delete()
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -396,13 +396,13 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
-if you have just the id of your command, it is not necessary to get the whole command.\
+if you only have the id of your command, it is not necessary to get the whole command.\
 You can delete a global command by id, like this:
 ```py
 manager.delete_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -421,12 +421,12 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Delete a guild slash command
 
-If you have get your command from the manager, you can delete your command easly like this:
+If you've got your command from the manager, you can delete it easly like this:
 ```py
 command.delete()
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -444,13 +444,13 @@ async def on_ready():
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
 
-if you have just the id of your command, it is not necessary to get the whole command.\
+if you only have the id of your command, it is not necessary to get the whole command.\
 You can delete a guild command by id, like this:
 ```py
 manager.delete_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND)
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -469,13 +469,13 @@ client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 #### Edit a global slash command
 
-To edit a command, you need is id and a command object, exactly the same as for adding a command.\
+To edit a command, you need its id and a command object. it's exactly the same as for adding a command.\
 This is the edit function:
 ```py
 manager.edit_global_command(REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -499,7 +499,7 @@ This is the edit function:
 manager.edit_guild_command(REPLACE_WITH_THE_ID_OF_YOUR_GUILD, REPLACE_WITH_THE_ID_OF_YOUR_COMMAND, command)
 ```
 
-A complet example:
+A complete example:
 ```py
 import discord
 import discordslashcommands as dsc
@@ -647,5 +647,3 @@ async def on_ready():
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
-
-
