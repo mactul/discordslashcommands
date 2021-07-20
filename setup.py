@@ -4,7 +4,7 @@ from distutils.core import setup
 setup(
     name = 'discordslashcommands',
     packages = ['discordslashcommands'],
-    version = '1.0.3',
+    version = '1.0.4',
     license='MIT',
     long_description = 'A simple libary to configurate slash commands on discord\n\nSee documentation at https://github.com/mactul/discordslashcommands\n\nThanks to Seniru for reporting and correcting some bugs and imperfections',
     author = 'Macéo Tuloup',
