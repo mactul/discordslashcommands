@@ -647,3 +647,8 @@ async def on_ready():
 
 client.run("XXXXXXXXXXXXXXXXXXXXXXXXXX")
 ```
+
+
+##Credits
+
+Thanks to Seniru for reporting and correcting some bugs and imperfections
