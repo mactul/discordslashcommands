@@ -1,6 +1,5 @@
 from .commands import Command
 from .options import ReturnedOption
-import __main__
 import discord
 from datetime import datetime, tzinfo, timedelta
 
@@ -30,7 +29,7 @@ class Interaction:
         self.id = int(id)
         self.guild = guild
         self.channel = client.get_channel(int(channel_id))
-        self.command = Command(name=data["name"], description=None, client=client, id=int(data["id"], guild_id=guild.id))
+        self.command = Command(name=data["name"], description=None, client=client, id=int(data["id"]), guild_id=guild.id)
         if "options" in data:
             for option in data["options"]:
                 self.command.add_option(ReturnedOption(name=option["name"], value=option["value"]))
@@ -65,4 +64,4 @@ class Interaction:
         }
 
         message = discord.Message(state=self.channel._state, channel=self.channel, data=message)
-        self._client.loop.create_task(__main__.on_message(message))
+        self._client.loop.create_task(self._client.on_message(message))

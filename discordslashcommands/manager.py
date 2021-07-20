@@ -1,6 +1,5 @@
 import requests
 import logging
-import __main__
 import discord
 import json
 from .interactions import Interaction
@@ -138,6 +137,6 @@ class Manager:
         member = discord.Member(guild=guild, data=data["member"], state=guild._state)
         interaction = Interaction(client=self._client, version=data["version"], type=data["type"], token=data["token"], id=data["id"], guild=guild, channel_id=data["channel_id"], data=data["data"], member_data=data["member"])
         try:
-            self._client.loop.create_task(__main__.on_interaction(member, interaction))
+            self._client.loop.create_task(self._client.on_interaction(member, interaction))
         except:
             pass
